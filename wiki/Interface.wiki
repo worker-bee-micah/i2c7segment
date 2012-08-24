@@ -1,13 +1,30 @@
 #summary Library for Adafruit 7-segment I2C display.
 
-= Introduction =
+This is a library for using the Adafruit i2c 4 digit 7 segment LED displays
+with i2c on a Raspberry Pi. It was built and tested on Raspbian Wheezy.
 
-Add your content here.
+This is not an Adafruit product. 
 
+To get i2c to work, you need Raspbian Wheezy or later and to do:
+ sudo apt-get install python-smbus
+ sudo apt-get install i2c-tools (usefull but not essential)
+ sudo modprobe i2c-dev
+ sudo modprobe i2c-bcm2708
 
-= Details =
+Example Usage:
+ 
+disp = Adafruit7Segment()
+raw_input("print_int(65535, 16)")
+disp.print_int(65535, 16)
+disp.write_display()
+raw_input("print_int(1234)")
+disp.print_int(1234)
+disp.write_display()
+raw_input("print_str(----)")
+disp.print_str('----')
+disp.write_display()
+raw_input("print_str(-12.3)")
+disp.print_str('-12.3')
+disp.write_display()
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Simon Monk http://www.simonmonk.org Please give credit where credit is due.
