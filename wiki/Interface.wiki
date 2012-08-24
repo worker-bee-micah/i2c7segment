@@ -12,7 +12,8 @@ To get i2c to work, you need Raspbian Wheezy or later and to do:
  sudo modprobe i2c-bcm2708
 
 Example Usage:
- 
+
+ {{{
 disp = Adafruit7Segment()
 raw_input("print_int(65535, 16)")
 disp.print_int(65535, 16)
@@ -26,5 +27,7 @@ disp.write_display()
 raw_input("print_str(-12.3)")
 disp.print_str('-12.3')
 disp.write_display()
+
+}}}
 
 Simon Monk http://www.simonmonk.org Please give credit where credit is due.
